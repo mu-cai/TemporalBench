@@ -7,13 +7,16 @@
 ![Alt text](https://temporalbench.github.io/static/images/teaser-enlarged-v1.png)
 [[Project Page]](https://temporalbench.github.io/) [[arXiv]](https://arxiv.org/abs/2410.10818) [[code]](https://github.com/mu-cai/TemporalBench)
 
-**TemporalBench** is a video understanding benchmark designed to evaluate fine-grained temporal reasoning for multimodal video models. It consists of ∼10K video question-answer pairs sourced from ∼2K high-quality human-annotated video captions, capturing detailed temporal dynamics and actions.
-
 ### Dataset Description
 
-- **Curated by:** Mu Cai, Reuben Tan, Jianfeng Gao, Yong Jae Lee, Jianwei Yang, etc.
+- **Curated by:** [Mu Cai](https://pages.cs.wisc.edu/~mucai/), [Reuben Tan](https://cs-people.bu.edu/rxtan/), [Jianfeng Gao](https://www.microsoft.com/en-us/research/people/jfgao/?from=https://research.microsoft.com/en-us/um/people/jfgao/&type=exact), [Yong Jae Lee](https://pages.cs.wisc.edu/~yongjaelee/), [Jianwei Yang](https://jwyang.github.io/), etc.
 - **Language(s):** English
 - **License:** MIT
+
+
+**TemporalBench** is a video understanding benchmark designed to evaluate fine-grained temporal reasoning for multimodal video models. It consists of ∼10K video question-answer pairs sourced from ∼2K high-quality human-annotated video captions, capturing detailed temporal dynamics and actions.
+
+
 
 
 ### Direct Use
