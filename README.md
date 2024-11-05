@@ -1,7 +1,7 @@
 
 # TemporalBench: Benchmarking Fine-grained Temporal Understanding for Multimodal Video Models
 
-**Dataset is releaseh [here](https://huggingface.co/datasets/microsoft/TemporalBench)!**
+**Dataset is released [here](https://huggingface.co/datasets/microsoft/TemporalBench)**!
 
 
 ![Alt text](https://temporalbench.github.io/static/images/teaser-enlarged-v1.png)
@@ -159,7 +159,6 @@ Multiple Binary Accuracy:                290/2179            13.31%
 <!-- This section describes suitable use cases for the dataset. -->
 
 <!-- The dataset is useful for assessing the temporal reasoning abilities of multimodal models, particularly fine-grained video understanding, long-term video understanding, and video captioning with rich details. -->
- -->
 
 
 ### Data Instances
