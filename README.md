@@ -49,6 +49,7 @@ unzip short_video.zip
 cat long_video_part_* > long_video.zip
 unzip long_video.zip
 rm -rf *.zip
+rm -rf long_video_part_*
 cd ..
 ```
 
