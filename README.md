@@ -140,10 +140,13 @@ python get_captioning_score.py
 You will get something like this:
 
 ```txt
+$ python get_qa_acc.py --data_json temporalbench_short_qa.json
 ******************** llava-onevision-qwen2-7b-ov-frame1.jsonl ********************
 Binary Accuracy:                         5259/9867            53.30%
 Multiple Binary Accuracy:                290/2179            13.31%
-|--- Dataset                                 Binary Accuracy             ||| Multiple Binary Accuracy                   
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|+++ Dataset                                 Binary Accuracy             ||| Multiple Binary Accuracy                   
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 |--- ActivityNet                              629/1186            53.04% ||| 47/281             16.73%
 |--- Charades                                 544/957             56.84% ||| 55/298             18.46%
 |--- COIN                                     890/1550            57.42% ||| 62/385             16.10%
@@ -151,6 +154,17 @@ Multiple Binary Accuracy:                290/2179            13.31%
 |--- Movie_Description                        796/1467            54.26% ||| 52/326             15.95%
 |--- Oops                                     815/1571            51.88% ||| 26/294             8.84%
 |--- FineGym                                  702/1594            44.04% ||| 14/288             4.86%
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|-- Category                                Binary Accuracy             ||| Multiple Binary Accuracy                   
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|--- Action Order                             62/129             48.06% ||| 48/110             43.64%
+|--- Action Frequency                         244/530             46.04% ||| 154/390             39.49%
+|--- Action Type                              1453/2802            51.86% ||| 608/1547            39.30%
+|--- Motion Magnitude                         138/320             43.12% ||| 97/253             38.34%
+|--- Motion Direction/Orientation             723/1536            47.07% ||| 400/1037            38.57%
+|--- Action Effector                          516/1109            46.53% ||| 275/746             36.86%
+|--- Event Order                              1296/2099            61.74% ||| 542/1132            47.88%
+|--- Others                                   827/1342            61.62% ||| 435/839             51.85%
 ```
 
 
