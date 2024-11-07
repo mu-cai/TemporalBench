@@ -90,7 +90,7 @@ Very simple!
 2. Write the inference code at https://github.com/mu-cai/TemporalBench/blob/main/eval/llava-onevision.py/#L68-L101
 
 
-**Case 2: Evaluate Existing Models**
+**Case 2: Evaluate existing models**
 
 If you want to evaluate existing models like LLaVA-OneVision, prepare the environment as follows
 
@@ -102,7 +102,7 @@ pip install -e .
 # Update --data_folder
 CUDA_VISIBLE_DEVICES=0 python eval/llava-onevision.py --data_json temporalbench_short_qa.json
 CUDA_VISIBLE_DEVICES=1 python eval/llava-onevision.py --data_json temporalbench_long_qa.json
-CUDA_VISIBLE_DEVICES=2 python eval/llava-onevision.py --data_json temporalbench_short_capruib.json
+CUDA_VISIBLE_DEVICES=2 python eval/llava-onevision.py --data_json temporalbench_short_caption.json
 
 ```
 
@@ -117,7 +117,7 @@ You can use commands like this:
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 accelerate launch --main_process_port=29504 --num_processes=8 \
     -m lmms_eval \
     --model llava_onevision \
-    --model_args pretrained=lmms-lab/llava-onevision-qwen2-7b-ov,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=8 \
+    --model_args pretrained=lmms-lab/llava-onevision-qwen2-7b-ov,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=1 \
     --tasks temporalbench \
     --batch_size 1 \
     --log_samples \
@@ -140,7 +140,7 @@ python get_qa_acc.py --data_json temporalbench_long_qa.json
 python get_captioning_score.py 
 ```
 
-You will get something like this:
+You will get something like this for `temporalbench_short_qa`:
 
 ```txt
 $ python get_qa_acc.py --data_json temporalbench_short_qa.json
