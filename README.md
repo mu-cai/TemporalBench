@@ -110,6 +110,8 @@ CUDA_VISIBLE_DEVICES=2 python eval/llava-onevision.py --data_json temporalbench_
 
 ### Option 2. Using \[[lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)\] (Systematic!)
 
+Our pull request is [here](https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/402/files).
+
 You can use commands like this:
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,6,7 accelerate launch --main_process_port=29504 --num_processes=5 \
