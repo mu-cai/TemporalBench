@@ -19,7 +19,7 @@
 - **License:** MIT
 
 
-**TemporalBench** is a video understanding benchmark designed to evaluate fine-grained temporal reasoning for multimodal video models. It consists of ∼10K video question-answer pairs sourced from ∼2K high-quality human-annotated video captions, capturing detailed temporal dynamics and actions.
+**TemporalBench** is a video understanding benchmark designed to evaluate fine-grained temporal understanding and reasoning for multimodal video models. It consists of ∼10K video question-answer pairs sourced from ∼2K high-quality human-annotated video captions, capturing detailed temporal dynamics and actions.
 
 
 
@@ -32,9 +32,11 @@
 Please clone our HuggingFace repository, which contains the following structure:
 ```
 |--short_video.zip
-|--long_video_part_aa
-!-- ...
-|--long_video_part_aj
+|--long_video_ActivityNet.zip
+|--long_video_Charades.zip
+|--long_video_COIN.zip
+|--long_video_EgoExo4D.zip
+|--long_video_FineGym.zip 
 |--temporalbench_short_qa.json
 |--temporalbench_long_qa.json
 |--temporalbench_short_caption.json
@@ -45,11 +47,8 @@ and then unzip all videos. You can use the following commands:
 git lfs install
 git clone https://huggingface.co/datasets/microsoft/TemporalBench
 cd TemporalBench
-unzip short_video.zip
-cat long_video_part_* > long_video.zip
-unzip long_video.zip
+unzip long_video_ActivityNet.zip long_video_Charades.zip long_video_COIN.zip long_video_EgoExo4D.zip long_video_FineGym.zip short_video.zip
 rm -rf *.zip
-rm -rf long_video_part_*
 cd ..
 ```
 
@@ -109,20 +108,22 @@ CUDA_VISIBLE_DEVICES=2 python eval/llava-onevision.py --data_json temporalbench_
 
 
 
-### Option 2. Using \[[lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)\] (Systematic! will be ready soon)
+### Option 2. Using \[[lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)\] (Systematic!)
 
 You can use commands like this:
 ```
-accelerate launch --num_processes 8 --main_process_port 12345 -m lmms_eval \
-     --model llava_onevision \
-    --model_args pretrained=pretrained=lmms-lab/llava-onevision-qwen2-7b-ov,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=8 \
+CUDA_VISIBLE_DEVICES=0,1,2,6,7 accelerate launch --main_process_port=29504 --num_processes=5 \
+    -m lmms_eval \
+    --model llava_onevision \
+    --model_args pretrained=lmms-lab/llava-onevision-qwen2-7b-ov,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=1 \
     --tasks temporalbench \
     --batch_size 1 \
     --log_samples \
-    --log_samples_suffix llava_vid_32B \
-    --output_path ./logs/
+    --log_samples_suffix llava_onevision \
+    --output_path ./logs/temporalbench_short_qa_try
 ```
 
+You can change `--tasks temporalbench` to `--tasks temporalbench_short_qa`, `--tasks temporalbench_long_qa`, `--tasks temporalbench_short_caption` to specify a specific task.
 
 
 ## 2. Calculate the score:
