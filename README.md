@@ -114,10 +114,10 @@ Our pull request is [here](https://github.com/EvolvingLMMs-Lab/lmms-eval/pull/40
 
 You can use commands like this:
 ```
-CUDA_VISIBLE_DEVICES=0,1,2,6,7 accelerate launch --main_process_port=29504 --num_processes=5 \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 accelerate launch --main_process_port=29504 --num_processes=8 \
     -m lmms_eval \
     --model llava_onevision \
-    --model_args pretrained=lmms-lab/llava-onevision-qwen2-7b-ov,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=1 \
+    --model_args pretrained=lmms-lab/llava-onevision-qwen2-7b-ov,conv_template=qwen_1_5,model_name=llava_qwen,max_frames_num=8 \
     --tasks temporalbench \
     --batch_size 1 \
     --log_samples \
