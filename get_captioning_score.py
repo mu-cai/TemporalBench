@@ -54,7 +54,7 @@ def calculate_average_similarity(ref_list, gt_list, model_name='all-MiniLM-L6-v2
     cosine_scores = util.cos_sim(ref_embeddings, gt_embeddings).diagonal()
     
     # Calculate the average similarity
-    avg_similarity = cosine_scores.mean().item()*100
+    avg_similarity = cosine_scores.mean().item()
     
     return avg_similarity
   
